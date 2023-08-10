@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>MIPS 2022 Newsletter</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        
+        .banner {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .banner img {
+            max-width: 100%;
+            
+        }
+        .maincontent{
+            background-image: url(https://www.hindustantimes.com/ht-img/img/2023/08/09/550x309/Services-at-the-out-patient-departments--OPDs--of-_1691601658277_1691601670533.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size:cover;
+            
+            border-radius: 30px;
+            margin:10px;
+            
+        }
+        
+        .vic:hover{
+            opacity: 1;
+        }
+        .mt-1{
+            text-decoration-color: #ffffff;
+        }
+        .content {
+            padding: 30px 20px 30px 20px;
+            background-color: #f3f5ff6f;
+            margin: 20px 0;
+            
+            border-radius: 2px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            
+            padding: 30px;
+            
+        }
+        .mb{
+            border: 20px;
+            border-color: black;
+            border-radius: 3px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .footer a {
+            color: #000000;
+            font-weight: bold;
+        }
+        .right{
+            
+            border-radius: 25px;
+        
+        }
+        
+    </style>
+</head>
+<body style="background-color: #ebebf3;">
+    <div class="container mt-4">
+        <div style="background-color: #ffffff; padding: 10px;">
+    <img src="https://healthcareinformatics.co.in/images/hipl_logo.png" alt="Company Logo" class="img-fluid mb-3">
+<br><br>
+        <h1 class="v" 
+            style="margin: 0px; line-height: 100%; text-align: CENTER; word-wrap: break-word; font-size: 44px; font-weight: 700;">
+            MIPS 2022 - Track your MIPS measures Performance!
+        </h1>
+        <div class="maincontent"><br>
+            <h3 style=" text-shadow: 2px 1px; text-align: center; font-size: 50px; color: rgb(255, 102, 0);">MIPS 2022 </h3>
+            
+            <h2 style="text-shadow: 2px 1px; text-align: center; padding-top:10%; padding-bottom:10%; font-size: 35px; color: rgb(6, 28, 115);" >
+                Start reporting your MIPS 2022 data - Track, improve, and report data with us!
+            </h2>
+        </div>
+    
+        <div class="content flex" style="background-color: #fae1cc6f;">
+<div>
+            <h2>Avoid -9% Penalty</h2>
+            <p>As we are in the middle of 2022, to make the best of it, start reporting your MIPS data for Quality, Promoting Interoperability, and Improvement Activities reporting. This year 75 MIPS Points are required to avoid NEGATIVE PENALTY.</p>
+</div>
+<img class="right"  src="https://th.bing.com/th/id/R.756376c017e1bffacbc201b0f809f5aa?rik=7KIlBN0c0f1%2fAw&riu=http%3a%2f%2fmohawkglobal.com%2fwp-content%2fuploads%2f2018%2f01%2fPenalty-580x400-1.jpg&ehk=gQvwExQne8HMmyegJ17lN63X7uS3MtI9SkpOu6BbBxo%3d&risl=&pid=ImgRaw&r=0" width="162px" height="162px">
+
+        </div>
+
+        
+    
+
+        <div class="content" style="background-color: #ffb4f06f;">
+            <h2>MIPS Score: Distribution of Reimbursements</h2>
+            
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+      
+    }
+    </style>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script>
+    am5.ready(function() {
+    
+   var root = am5.Root.new("chartdiv");
+    
+    
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+    
+    
+    var chart = root.container.children.push(am5radar.RadarChart.new(root, {
+      
+      startAngle: 180,
+      endAngle: 360
+    }));
+    
+    var axisRenderer = am5radar.AxisRendererCircular.new(root, {
+      innerRadius: 80
+    });
+    axisRenderer.grid.template.setAll({
+      visible: false,
+    });
+    
+    var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+      maxDeviation: 0,
+      min: 0,
+      max: 100,
+      strictMinMax: true,
+      renderer: axisRenderer
+    })); 
+   var axisDataItem = xAxis.makeDataItem({});
+    
+    var clockHand = am5radar.ClockHand.new(root, {
+      pinRadius: am5.percent(15),
+      radius: am5.percent(70),
+      bottomWidth: 40
+    })
+    
+    var bullet = axisDataItem.set("bullet", am5xy.AxisBullet.new(root, {
+      sprite: clockHand
+    }));
+    
+    xAxis.createAxisRange(axisDataItem);
+    
+    var label = chart.radarContainer.children.push(am5.Label.new(root, {
+      fill: am5.color(0xffffff),
+      centerX: am5.percent(50),
+      textAlign: "center",
+      centerY: am5.percent(50),
+      fontSize: "2em"
+    
+    }));
+    
+    axisDataItem.set("value", 50);
+    bullet.get("sprite").on("rotation", function () {
+      var value = axisDataItem.get("value");
+      var text = Math.round(axisDataItem.get("value")).toString();
+      var fill = am5.color(0x000000);
+      xAxis.axisRanges.each(function (axisRange) {
+        if (value >= axisRange.get("value") && value <= axisRange.get("endValue")) {
+          fill = axisRange.get("axisFill").get("fill");
+        }
+      })
+    
+      label.set("text", Math.round(value).toString());
+    
+      clockHand.pin.animate({ key: "fill", to: fill, duration: 500, easing: am5.ease.out(am5.ease.cubic) })
+      clockHand.hand.animate({ key: "fill", to: fill, duration: 500, easing: am5.ease.out(am5.ease.cubic) })
+    });
+    
+    setInterval(function () {
+      axisDataItem.animate({
+        key: "value",
+        to: 80,
+        duration: 500,
+        
+      });
+    }, 2000)
+  
+    var bandsData = [{
+      title: "Score : 0-18.75 \n Nagative Payment \n  Adjustment \n -9%",
+      color: "#ee1f25",
+      lowScore: 0,
+      highScore: 25
+    }, {
+        title: "Score :18.76-74.99 \n Nagative Payment \n  Adjustment \n -9% to 0%",
+
+      color: "#f04922",
+      lowScore: 25,
+      highScore: 50
+    }, {
+        title: "Score : 75.01-88.99 \n Positive Payment \n  Adjustment \n >0%",
+
+      color: "#54b947",
+      lowScore: 50,
+      highScore: 75
+    }, {
+        title: "Score : 89-100 \n Exceptional Performance \n  Bonus \n 0.5-10%",
+      color: "#0f9747",
+      lowScore: 75,
+      highScore: 100
+    }];
+    
+    am5.array.each(bandsData, function (data) {
+      var axisRange = xAxis.createAxisRange(xAxis.makeDataItem({}));
+    
+      axisRange.setAll({
+        value: data.lowScore,
+        endValue: data.highScore
+      });
+    
+      axisRange.get("axisFill").setAll({
+        visible: true,
+        fill: am5.color(data.color),
+        fillOpacity:0.8
+      });
+    
+      axisRange.get("label").setAll({
+        text: data.title,
+        inside: false,
+        radius: 20,
+        
+        fontSize: "0.9em",
+        fill: root.interfaceColors.get("background")
+      });
+    });
+    
+    chart.appear(1000, 100);
+    
+    }); 
+    </script>
+    <div id="chartdiv" style="border:10px border-radius: 50;"></div>
+             <!-- Add any relevant text or additional content here -->
+        </div>
+
+        <div class="content">
+            <h2>Reporting Requirements in a Nutshell!</h2>
+            <div class="mydiv"></div>
+            <div class="flex "style=" background-color: #fffaed;">
+                <div class="card-body">
+                    <h5>Quality</h5>
+                    <p>[Weight: 30%, Max Points: 60, Performance Period: 365 Days]</p>
+                    <p>Report a total of 6 Quality Measures</p>
+                    <!-- Add more details about Quality reporting -->
+                </div>
+<img class="right"  src="https://th.bing.com/th/id/OIP.FyTGoAySre8aDm_oKRWlbgHaFQ?pid=ImgDet&rs=1" width="162px" height="162px">
+            </div>
+            <div class="flex" style="background-color: #f5fcef6f;">
+<img class="right"  src="https://th.bing.com/th/id/OIP.dFG0-pQmDWLiYWKlqhGqzwHaE8?pid=ImgDet&rs=1" width="162px" height="162px">
+                
+                <div class="card-body" >
+                    <h5>Promote Interoperability</h5>
+                    <p>[Weight: 25%, Max Points: 100, Performance Period: 90 Days minimum]</p>
+                    <p>Report all mandatory objectives shown below.</p>
+                    <!-- Add more details about Promote Interoperability reporting -->
+                </div>
+            </div>
+            <div class="flex" style="background-color: #f9defb6f;">
+                <div class="card-body">
+                    <h5>Improvement Activities</h5>
+                    <p>[Weight: 15%, Max Points: 40, Performance Period: 90 Days minimum]</p>
+                    <p>Report a combination of Improvement Activity measures to equal a total of 40 points.</p>
+                    <!-- Add more details about Improvement Activities reporting -->
+                </div>
+<img class="right"  src="https://www.the-rheumatologist.org/wp-content/uploads/2015/10/THR_1015_pg72a.png" width="162px" height="162px">
+
+            </div>
+            <div class="flex" style="background-color: #feebeb6f;">
+<img class="right"  src="https://www.ifco.com/wp-content/uploads/generating-cost-savings-1180x786.jpg" width="162px" height="162px">
+
+                <div class="card-body">
+                    <h5>Cost</h5>
+                    <p>[Weight: 30%, Max Points: 30, Performance Period: 365 days]</p>
+                    <p>Cost category score is automatically calculated by CMS based on your claims data.</p>
+                    <!-- Add more details about Cost reporting -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+<!--ffffffffffffffffffffffffff-->
+
+<!-- ... Remaining code ... -->
+
+
+    <div class="footer mt-4 ">
+        <div class="footer-col1">
+        <img src="https://healthcareinformatics.co.in/images/hipl_logo.png" alt="Footer Company Logo" class="img-fluid mb-3">
+        <p>In case of any queries, please contact our Customer Support.</p>
+        <p>Company Address, Phone, Email</p>
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links ">
+                <a href="#"><i class="fab fa-facebook-f" ></i> FACEBOOK &nbsp;&nbsp;&nbsp;&nbsp;</a> 
+                <a href="#"><i class="fab fa-twitter"></i> TWITTER &nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="#"><i class="fab fa-instagram"></i> INSTAGRAM &nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LINKEDIN &nbsp; &nbsp;&nbsp;&nbsp;</a>
+            </div>
+
+    
+    <!-- Add Bootstrap JS and jQuery scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
